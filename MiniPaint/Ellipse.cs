@@ -17,7 +17,7 @@ namespace oop_2
         }
         public override void Draw()
         {
-            //Console.WriteLine("Ellipse:({0},{1},{2},{3})", a, b, X, Y);
+           
         }
     }
 }

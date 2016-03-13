@@ -13,7 +13,7 @@ namespace oop_2
         }
         public override void Draw()
         {
-            //Console.WriteLine("Dot:({0},{1})", X, Y);
+            
         }
     }
 }

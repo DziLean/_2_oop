@@ -42,6 +42,8 @@ namespace oop_2
         }
         public virtual void Draw()
         {
-        }
+
+        }       
     }
+    public 
 }

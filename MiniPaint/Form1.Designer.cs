@@ -1,4 +1,4 @@
-﻿namespace MiniPaint
+﻿namespace _2_oop
 {
     partial class Form1
     {
@@ -29,7 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pnl_Draw = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.btn_Circle = new System.Windows.Forms.Button();
             this.btn_Rectangle = new System.Windows.Forms.Button();
             this.btn_Square = new System.Windows.Forms.Button();
@@ -47,12 +52,6 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_PenColor = new System.Windows.Forms.Button();
-            this.cmb_PenSize = new System.Windows.Forms.ComboBox();
-            this.pnl_Draw = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -75,6 +74,18 @@
             this.panel1.Size = new System.Drawing.Size(744, 433);
             this.panel1.TabIndex = 0;
             // 
+            // pnl_Draw
+            // 
+            this.pnl_Draw.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pnl_Draw.Location = new System.Drawing.Point(0, 0);
+            this.pnl_Draw.Name = "pnl_Draw";
+            this.pnl_Draw.Size = new System.Drawing.Size(602, 430);
+            this.pnl_Draw.TabIndex = 2;
+            this.pnl_Draw.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Draw_Paint);
+            this.pnl_Draw.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnl_Draw_MouseDown);
+            this.pnl_Draw.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnl_Draw_MouseMove);
+            this.pnl_Draw.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnl_Draw_MouseUp);
+            // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.PaleGoldenrod;
@@ -91,6 +102,41 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(141, 258);
             this.panel7.TabIndex = 3;
+            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(66, 141);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(13, 13);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "b";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(47, 141);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(13, 13);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "a";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(69, 157);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(64, 20);
+            this.textBox3.TabIndex = 12;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(0, 157);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(63, 20);
+            this.textBox2.TabIndex = 11;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // btn_Circle
             // 
@@ -124,7 +170,7 @@
             this.btn_Square.Name = "btn_Square";
             this.btn_Square.Size = new System.Drawing.Size(141, 28);
             this.btn_Square.TabIndex = 5;
-            this.btn_Square.Text = "Square";
+            this.btn_Square.Text = "Ellipse";
             this.btn_Square.UseVisualStyleBackColor = false;
             this.btn_Square.Click += new System.EventHandler(this.btn_Square_Click);
             // 
@@ -197,7 +243,6 @@
             this.panel2.Controls.Add(this.panel6);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.btn_PenColor);
-            this.panel2.Controls.Add(this.cmb_PenSize);
             this.panel2.Location = new System.Drawing.Point(603, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(141, 90);
@@ -272,70 +317,12 @@
             // btn_PenColor
             // 
             this.btn_PenColor.BackColor = System.Drawing.Color.Black;
-            this.btn_PenColor.Location = new System.Drawing.Point(3, 59);
+            this.btn_PenColor.Location = new System.Drawing.Point(10, 43);
             this.btn_PenColor.Name = "btn_PenColor";
             this.btn_PenColor.Size = new System.Drawing.Size(126, 28);
             this.btn_PenColor.TabIndex = 2;
             this.btn_PenColor.UseVisualStyleBackColor = false;
             this.btn_PenColor.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // cmb_PenSize
-            // 
-            this.cmb_PenSize.FormattingEnabled = true;
-            this.cmb_PenSize.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4"});
-            this.cmb_PenSize.Location = new System.Drawing.Point(3, 32);
-            this.cmb_PenSize.Name = "cmb_PenSize";
-            this.cmb_PenSize.Size = new System.Drawing.Size(126, 21);
-            this.cmb_PenSize.TabIndex = 1;
-            this.cmb_PenSize.Text = "1";
-            // 
-            // pnl_Draw
-            // 
-            this.pnl_Draw.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pnl_Draw.Location = new System.Drawing.Point(0, 0);
-            this.pnl_Draw.Name = "pnl_Draw";
-            this.pnl_Draw.Size = new System.Drawing.Size(602, 430);
-            this.pnl_Draw.TabIndex = 2;
-            this.pnl_Draw.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Draw_Paint);
-            this.pnl_Draw.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnl_Draw_MouseDown);
-            this.pnl_Draw.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnl_Draw_MouseMove);
-            this.pnl_Draw.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnl_Draw_MouseUp);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(69, 157);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(67, 20);
-            this.textBox2.TabIndex = 11;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(-1, 157);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(64, 20);
-            this.textBox3.TabIndex = 12;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(66, 141);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(13, 13);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "b";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(47, 141);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(13, 13);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "a";
             // 
             // Form1
             // 
@@ -346,7 +333,7 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Mini Paint by Anoop Sharma";
+            this.Text = "Mini Paint ";
             this.panel1.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
@@ -368,7 +355,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pnl_Draw;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox cmb_PenSize;
         private System.Windows.Forms.Button btn_PenColor;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
@@ -383,13 +369,13 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button btn_Circle;
         private System.Windows.Forms.Button btn_Rectangle;
-        private System.Windows.Forms.Button btn_Square;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btn_Square;
     }
 }
 

@@ -14,7 +14,7 @@ namespace oop_2
         }
         public override void Draw()
         {
-            //Console.WriteLine("Circle:({0},{1},{2})", X, Y, R);
+            
         }
     }
 }

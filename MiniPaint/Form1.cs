@@ -2,10 +2,43 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace MiniPaint
+namespace _2_oop
 {
     public partial class Form1 : Form
     {
+        public static abstract class Factory
+        {
+            public void CreateFigure(string figure)
+            {
+
+                if (figure == "rectangle")
+                {
+                    //Use Solid Brush for filling the graphic shapes
+                    SolidBrush sb = new SolidBrush(btn_PenColor.BackColor);
+                    //setting the width and height same for creating square.
+                    //Getting the width and Heigt value from Textbox(txt_ShapeSize)
+                    g.FillEllipse(sb, e.X, e.Y, int.Parse(textBox2.Text), int.Parse(textBox3.Text));
+                    //setting startPaint and drawSquare value to false for creating one graphic on one click.
+                    //startPaint = false;
+                    //drawSquare = false;
+                }
+                if (figure == "circle")
+                {
+                    SolidBrush sb = new SolidBrush(btn_PenColor.BackColor);
+                    //setting the width twice of the height
+                    g.FillRectangle(sb, e.X, e.Y, e.X + int.Parse(textBox2.Text), e.Y + int.Parse(textBox3.Text));
+                    //startPaint = false;
+                    //drawRectangle = false;
+                }
+                if (figure == "ellipse")
+                {
+                    SolidBrush sb = new SolidBrush(btn_PenColor.BackColor);
+                    g.FillEllipse(sb, e.X, e.Y, int.Parse(textBox2.Text), int.Parse(textBox3.Text));
+                    //startPaint = false;
+                    //drawCircle = false;
+                }
+            }
+        }
         public Form1()
         {
             InitializeComponent();
@@ -16,7 +49,7 @@ namespace MiniPaint
         //nullable int for storing Null value
         int? initX = null;
         int? initY = null;
-        bool drawSquare = false;
+        bool drawEllipse = false;
         bool drawRectangle = false;
         bool drawCircle = false;
         //Event fired when the mouse pointer is moved over the Panel(pnl_Draw).
@@ -25,7 +58,7 @@ namespace MiniPaint
             if(startPaint)
             {
                 //Setting the Pen BackColor and line Width
-                Pen p = new Pen(btn_PenColor.BackColor,float.Parse(cmb_PenSize.Text));
+                Pen p = new Pen(btn_PenColor.BackColor,2);
                 //Drawing the line.
                 g.DrawLine(p, new Point(initX ?? e.X, initY ?? e.Y), new Point(e.X, e.Y));
                 initX = e.X;
@@ -35,32 +68,39 @@ namespace MiniPaint
         //Event Fired when the mouse pointer is over Panel and a mouse button is pressed
         private void pnl_Draw_MouseDown(object sender, MouseEventArgs e)
         {
-            startPaint = true;
-            if (drawSquare)
+            try
             {
-                //Use Solid Brush for filling the graphic shapes
-                SolidBrush sb = new SolidBrush(btn_PenColor.BackColor);
-                //setting the width and height same for creating square.
-                //Getting the width and Heigt value from Textbox(txt_ShapeSize)
-                g.FillRectangle(sb, e.X, e.Y, int.Parse(txt_ShapeSize.Text), int.Parse(txt_ShapeSize.Text));
-                //setting startPaint and drawSquare value to false for creating one graphic on one click.
-                //startPaint = false;
-                //drawSquare = false;
+                startPaint = true;
+                if (drawEllipse)
+                {
+                    //Use Solid Brush for filling the graphic shapes
+                    SolidBrush sb = new SolidBrush(btn_PenColor.BackColor);
+                    //setting the width and height same for creating square.
+                    //Getting the width and Heigt value from Textbox(txt_ShapeSize)
+                    g.FillEllipse(sb, e.X, e.Y, int.Parse(textBox2.Text), int.Parse(textBox3.Text));
+                    //setting startPaint and drawSquare value to false for creating one graphic on one click.
+                    //startPaint = false;
+                    //drawSquare = false;
+                }
+                if (drawRectangle)
+                {
+                    SolidBrush sb = new SolidBrush(btn_PenColor.BackColor);
+                    //setting the width twice of the height
+                    g.FillRectangle(sb, e.X, e.Y, e.X + int.Parse(textBox2.Text), e.Y + int.Parse(textBox3.Text));
+                    //startPaint = false;
+                    //drawRectangle = false;
+                }
+                if (drawCircle)
+                {
+                    SolidBrush sb = new SolidBrush(btn_PenColor.BackColor);
+                    g.FillEllipse(sb, e.X, e.Y, int.Parse(textBox2.Text), int.Parse(textBox3.Text));
+                    //startPaint = false;
+                    //drawCircle = false;
+                }
             }
-            if(drawRectangle)
+            catch (Exception ex)
             {
-                SolidBrush sb = new SolidBrush(btn_PenColor.BackColor);
-                //setting the width twice of the height
-                g.FillRectangle(sb, e.X, e.Y, 2*int.Parse(txt_ShapeSize.Text), int.Parse(txt_ShapeSize.Text));
-                //startPaint = false;
-                //drawRectangle = false;
-            }
-            if(drawCircle)
-            {
-                SolidBrush sb = new SolidBrush(btn_PenColor.BackColor);
-                g.FillEllipse(sb, e.X, e.Y, int.Parse(txt_ShapeSize.Text), int.Parse(txt_ShapeSize.Text));
-                //startPaint = false;
-                //drawCircle = false;
+                MessageBox.Show("Invalid arguments!");
             }
         }
         //Fired when the mouse pointer is over the pnl_Draw and a mouse button is released.
@@ -102,21 +142,21 @@ namespace MiniPaint
 
         private void btn_Square_Click(object sender, EventArgs e)
         {
-            drawSquare = true;
+            drawEllipse = true;
             drawRectangle = false;
             drawCircle = false;
         }
 
         private void btn_Rectangle_Click(object sender, EventArgs e)
         {
-            drawSquare = false;
+            drawEllipse = false;
             drawRectangle = true;
             drawCircle = false;
         }
 
         private void btn_Circle_Click(object sender, EventArgs e)
         {
-            drawSquare = false;
+            drawEllipse = false;
             drawRectangle = false;
             drawCircle = true;
         }
@@ -165,6 +205,21 @@ namespace MiniPaint
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel7_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -16,7 +16,7 @@ namespace oop_2
         }
         public override void Draw()
         {
-            //Console.WriteLine("Line:(({0},{1}),({2},{3}))", X, Y, x2, y2);
+            
         }
     }
         
