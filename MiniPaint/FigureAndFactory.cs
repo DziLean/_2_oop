@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace oop_2
+namespace _oop_2
 {
     public abstract class Figure
     {
@@ -39,11 +39,13 @@ namespace oop_2
         {
             X = x;
             Y = y;
-        }
+        }             
+    }
+    interface Painter
+    {
         public virtual void Draw()
         {
-
-        }       
+            
+        }
     }
-    public 
 }

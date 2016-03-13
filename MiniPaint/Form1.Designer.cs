@@ -305,7 +305,7 @@
             // 
             // button2
             // 
-            this.button2.Image = global::MiniPaint.Properties.Resources.pencil;
+            this.button2.Image = global::_2_oop.Properties.Resources.pencil;
             this.button2.Location = new System.Drawing.Point(4, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(122, 28);
