@@ -13,10 +13,6 @@ namespace _2_oop
         {                   
             rightX = xr;
             rightY = yr;
-        }
-        public override void Draw()
-        {
-            //Console.WriteLine("Rectangle:({0},{1},{2},{3})", X, Y, rightX, rightY);
-        }
+        }       
     }
 }

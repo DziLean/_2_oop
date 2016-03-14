@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
+
 
 namespace _2_oop
 {
@@ -41,8 +43,8 @@ namespace _2_oop
             Y = y;
         }             
     }
-    interface Painter
+    public interface Painter
     {
-        void Draw();
+        void Draw(Figure figure, MouseEventArgs e, int length, int height);
     }
 }

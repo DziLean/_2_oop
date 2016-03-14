@@ -81,7 +81,7 @@
             this.pnl_Draw.Name = "pnl_Draw";
             this.pnl_Draw.Size = new System.Drawing.Size(602, 430);
             this.pnl_Draw.TabIndex = 2;
-            this.pnl_Draw.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Draw_Paint);
+      
             this.pnl_Draw.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnl_Draw_MouseDown);
             this.pnl_Draw.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnl_Draw_MouseMove);
             this.pnl_Draw.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnl_Draw_MouseUp);
@@ -102,7 +102,7 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(141, 258);
             this.panel7.TabIndex = 3;
-            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
+           
             // 
             // label7
             // 
@@ -128,7 +128,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(64, 20);
             this.textBox3.TabIndex = 12;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+          
             // 
             // textBox2
             // 
@@ -136,7 +136,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(63, 20);
             this.textBox2.TabIndex = 11;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+           
             // 
             // btn_Circle
             // 
@@ -193,7 +193,7 @@
             this.label3.Size = new System.Drawing.Size(91, 16);
             this.label3.TabIndex = 1;
             this.label3.Text = "Draw Figure";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+        
             // 
             // panel4
             // 

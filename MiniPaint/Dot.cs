@@ -10,10 +10,6 @@ namespace _2_oop
         public Dot(int x, int y):base(x , y)
         {            
             
-        }
-        public override void Draw()
-        {
-            
-        }
+        }        
     }
 }

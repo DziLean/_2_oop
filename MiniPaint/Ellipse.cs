@@ -14,10 +14,6 @@ namespace _2_oop
         {
             this.a = a;
             this.b = b;           
-        }
-        public override void Draw()
-        {
-           
-        }
+        }        
     }
 }

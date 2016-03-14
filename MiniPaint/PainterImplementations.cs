@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace _2_oop
 {
-    class PainterImplementations:Painter //fabric of classes
-    {
-         
-    }
+  
 }

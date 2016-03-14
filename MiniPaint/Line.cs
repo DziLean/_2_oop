@@ -13,11 +13,7 @@ namespace _2_oop
         {           
             this.x2 = x2;
             this.y2 = y2;
-        }
-        public override void Draw()
-        {
-            
-        }
+        }        
     }
         
 }

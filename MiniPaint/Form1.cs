@@ -4,99 +4,157 @@ using System.Windows.Forms;
 
 namespace _2_oop
 {
-    public partial class Form1 : Form
+    class RectangleBuider : Painter //fabric of classes
+    {
+        void Draw(Rectangle rect, MouseEventArgs e, int length, int height)
+        {
+            Form1.g.FillRectangle(Form1.sb, e.X, e.Y, e.X + length, e.Y + height);
+        }
+
+        void Painter.Draw(Figure rect, MouseEventArgs e, int length, int height)
+        {
+
+        }
+    }
+    class CircleBuider : Painter //fabric of classes
+    {
+        void Draw(Circle rect, MouseEventArgs e, int length, int height)
+        {
+            Form1.g.FillEllipse(Form1.sb, e.X, e.Y, length, length);
+        }
+
+        void Painter.Draw(Figure rect, MouseEventArgs e, int length, int height)
+        {
+
+        }
+    }
+    class EllipseBuilder : Painter //fabric of classes
+    {
+        void Draw(Ellipse rect, MouseEventArgs e, int length, int height)
+        {
+            Form1.g.FillEllipse(Form1.sb, e.X, e.Y, length, height);
+        }
+
+        void Painter.Draw(Figure rect, MouseEventArgs e, int length, int height)
+        {
+
+        }
+    }
+    class DotBuider : Painter //fabric of classes
+    {
+        void Draw(Dot rect, MouseEventArgs e, int length, int height)
+        {
+            Form1.g.FillRectangle(Form1.sb, e.X, e.Y, e.X + length, e.Y + height);
+        }
+
+        void Painter.Draw(Figure rect, MouseEventArgs e, int length, int height)
+        {
+
+        }
+    }
+    class LineBuilder : Painter //fabric of classes
+    {
+        void Draw(Line rect, MouseEventArgs e, int length, int height)
+        {
+            Form1.g.FillRectangle(Form1.sb, e.X, e.Y, e.X + length, e.Y + height);
+        }
+
+        void Painter.Draw(Figure rect, MouseEventArgs e, int length, int height)
+        {
+
+        }
+    }
+    class TriangleBuilder : Painter
+    {
+        void Draw(Triangle rect, MouseEventArgs e, int length, int height)
+        {
+            Form1.g.FillRectangle(Form1.sb, e.X, e.Y, e.X + length, e.Y + height);
+        }
+
+        void Painter.Draw(Figure rect, MouseEventArgs e, int length, int height)
+        {
+
+        }
+    }
+    public partial  class Form1 : Form
     {       
         public Form1()
         {
             InitializeComponent();
             g = pnl_Draw.CreateGraphics();
+            startPaint = false;        
+            initX = 0;
+            initY = 0;
+            drawEllipse = false;
+            drawRectangle = false;
+            drawCircle = false;
+            sb = new SolidBrush(btn_PenColor.BackColor);
+            RectangleBuider RB = new RectangleBuider();
+            TriangleBuilder TB = new TriangleBuilder();
+            DotBuider DB = new DotBuider();
+            LineBuilder LB = new LineBuilder();
+            EllipseBuilder EB = new EllipseBuilder();
+            CircleBuilder CB = new CircleBuilder();
         }
-        public bool startPaint = false;
-        public Graphics g;
-        //nullable int for storing Null value
-        public int? initX = null;
-        public int? initY = null;
-        public bool drawEllipse = false;
-        public bool drawRectangle = false;
-        public bool drawCircle = false;
-        //Event fired when the mouse pointer is moved over the Panel(pnl_Draw).
+        public bool startPaint {get;set;}
+        public static Graphics g { get;set; }    
+        public int initX { get;set; }
+        public int initY { get;set; }
+        public bool drawEllipse { get;set; }
+        public bool drawRectangle { get;set; }
+        public bool drawCircle { get;set; }
+        public static SolidBrush sb { get; set; }
         private void pnl_Draw_MouseMove(object sender, MouseEventArgs e)
         {
             if(startPaint)
             {
-                //Setting the Pen BackColor and line Width
-                Pen p = new Pen(btn_PenColor.BackColor,2);
-                //Drawing the line.
-                g.DrawLine(p, new Point(initX ?? e.X, initY ?? e.Y), new Point(e.X, e.Y));
-                initX = e.X;
-                initY = e.Y;
+                Pen p = new Pen(btn_PenColor.BackColor,2);                     
+                g.DrawLine(p, new Point(e.X,e.Y), new Point(e.X, e.Y));                
             }
-        }
-        //Event Fired when the mouse pointer is over Panel and a mouse button is pressed
+        }        
         private void pnl_Draw_MouseDown(object sender, MouseEventArgs e)
         {
             try
             {
                 startPaint = true;
                 if (drawEllipse)
-                {
-                    //Use Solid Brush for filling the graphic shapes
-                    SolidBrush sb = new SolidBrush(btn_PenColor.BackColor);
-                    //setting the width and height same for creating square.
-                    //Getting the width and Heigt value from Textbox(txt_ShapeSize)
-                    g.FillEllipse(sb, e.X, e.Y, int.Parse(textBox2.Text), int.Parse(textBox3.Text));
-                    //setting startPaint and drawSquare value to false for creating one graphic on one click.
-                    //startPaint = false;
-                    //drawSquare = false;
+                {             
+                                     
                 }
                 if (drawRectangle)
-                {
-                    SolidBrush sb = new SolidBrush(btn_PenColor.BackColor);
-                    //setting the width twice of the height
-                    g.FillRectangle(sb, e.X, e.Y, e.X + int.Parse(textBox2.Text), e.Y + int.Parse(textBox3.Text));
-                    //startPaint = false;
-                    //drawRectangle = false;
+                {                                      
+                    
                 }
                 if (drawCircle)
-                {
-                    SolidBrush sb = new SolidBrush(btn_PenColor.BackColor);
-                    g.FillEllipse(sb, e.X, e.Y, int.Parse(textBox2.Text), int.Parse(textBox3.Text));
-                    //startPaint = false;
-                    //drawCircle = false;
+                {                    
+                                        
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Invalid arguments!");
             }
-        }
-        //Fired when the mouse pointer is over the pnl_Draw and a mouse button is released.
+        }        
         private void pnl_Draw_MouseUp(object sender, MouseEventArgs e)
         {
             startPaint = false;
-            initX = null;
-            initY = null;
-        }
-        //Button for Setting pen Color
+            initX = 0;
+            initY = 0;
+        }        
         private void button1_Click(object sender, EventArgs e)
         {
-            //Open Color Dialog and Set BackColor of btn_PenColor if user click on OK
             ColorDialog c = new ColorDialog();
             if(c.ShowDialog()==DialogResult.OK)
             {
                 btn_PenColor.BackColor = c.Color;
             }
-        }
-        //New 
+        } 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //Clearing the graphics from the Panel(pnl_Draw)
+        { 
             g.Clear(pnl_Draw.BackColor);
-            //Setting the BackColor of pnl_draw and btn_CanvasColor to White on Clicking New under File Menu
             pnl_Draw.BackColor = Color.White;
             btn_CanvasColor.BackColor = Color.White;
         }
-       //Setting the Canvas Color
         private void btn_CanvasColor_Click_1(object sender, EventArgs e)
         {
             ColorDialog c = new ColorDialog();
@@ -106,28 +164,24 @@ namespace _2_oop
                 btn_CanvasColor.BackColor = c.Color;
             }
         }
-
         private void btn_Square_Click(object sender, EventArgs e)
         {
             drawEllipse = true;
             drawRectangle = false;
             drawCircle = false;
         }
-
         private void btn_Rectangle_Click(object sender, EventArgs e)
         {
             drawEllipse = false;
             drawRectangle = true;
             drawCircle = false;
         }
-
         private void btn_Circle_Click(object sender, EventArgs e)
         {
             drawEllipse = false;
             drawRectangle = false;
             drawCircle = true;
-        }
-        //Exit under File Menu
+        }        
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if(MessageBox.Show("Do you want to Exit?","Exit",MessageBoxButtons.YesNo,MessageBoxIcon.Information)==DialogResult.Yes)
@@ -135,61 +189,5 @@ namespace _2_oop
                 Application.Exit();
             }
         }
-        //About under Help Menu
-        private void aboutMiniPaintToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void fileToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnl_Draw_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_ShapeSize_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel7_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-    }
+    }    
 }

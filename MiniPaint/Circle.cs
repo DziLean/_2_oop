@@ -11,10 +11,6 @@ namespace _2_oop
         public Circle(int x, int y, int r):base(x,y)
         {           
             R = r;
-        }
-        public override void Draw()
-        {
-            
-        }
+        }        
     }
 }
