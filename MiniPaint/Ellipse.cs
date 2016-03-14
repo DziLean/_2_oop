@@ -9,7 +9,7 @@ namespace _2_oop
     {
         public int a { get; set; }
         public int b { get; set; }
-        public Ellipse(int a, int b, int x, int y)
+        public Ellipse(int x, int y,int a, int b )
             : base(x, y)
         {
             this.a = a;

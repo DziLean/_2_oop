@@ -62,7 +62,7 @@ namespace _2_oop
                 
                 if (drawEllipse)
                 {
-                    Ellipse ellipse = new Ellipse(e.X, e.Y, int.Parse(textBox2.Text.ToString().Trim()), int.Parse(textBox3.Text.ToString().Trim()));
+                    Ellipse ellipse = new Ellipse(e.X, e.Y, int.Parse(a.Text.ToString().Trim()), int.Parse(b.Text.ToString().Trim()));
                     EB.Draw(ellipse);
                 }
                 if (drawRectangle)
@@ -182,5 +182,7 @@ namespace _2_oop
             drawDot = false;
             drawTriangle = true;
         }
+
+        
     }    
 }

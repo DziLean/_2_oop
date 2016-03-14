@@ -17,11 +17,11 @@ namespace _2_oop
             {
                 return this._x;
             }
-            private set
+            protected set
             {                
                 if (value <= 0)
                     throw new Exception("Invalid parameter: less than zero!");
-                this.x = value;
+                this._x = value;
             }
         }
         public int y
@@ -30,14 +30,14 @@ namespace _2_oop
             {
                 return this._y;
             }
-            private set
+            protected set
             {
                 if (value <= 0)
                     throw new Exception("Invalid parameter: less than zero!");
-                this.y = value;
+                this._y = value;
             }
         }
-        protected Figure(int x, int y)
+        protected Figure(int _x, int _y)
         {
             x = _x;
             y = _y;
