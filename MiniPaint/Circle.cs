@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace _oop_2
+namespace _2_oop
 {
     public class Circle : Figure
     {     

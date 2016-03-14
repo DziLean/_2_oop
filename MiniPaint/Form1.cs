@@ -5,53 +5,20 @@ using System.Windows.Forms;
 namespace _2_oop
 {
     public partial class Form1 : Form
-    {
-        public static abstract class Factory
-        {
-            public void CreateFigure(string figure)
-            {
-
-                if (figure == "rectangle")
-                {
-                    //Use Solid Brush for filling the graphic shapes
-                    SolidBrush sb = new SolidBrush(btn_PenColor.BackColor);
-                    //setting the width and height same for creating square.
-                    //Getting the width and Heigt value from Textbox(txt_ShapeSize)
-                    g.FillEllipse(sb, e.X, e.Y, int.Parse(textBox2.Text), int.Parse(textBox3.Text));
-                    //setting startPaint and drawSquare value to false for creating one graphic on one click.
-                    //startPaint = false;
-                    //drawSquare = false;
-                }
-                if (figure == "circle")
-                {
-                    SolidBrush sb = new SolidBrush(btn_PenColor.BackColor);
-                    //setting the width twice of the height
-                    g.FillRectangle(sb, e.X, e.Y, e.X + int.Parse(textBox2.Text), e.Y + int.Parse(textBox3.Text));
-                    //startPaint = false;
-                    //drawRectangle = false;
-                }
-                if (figure == "ellipse")
-                {
-                    SolidBrush sb = new SolidBrush(btn_PenColor.BackColor);
-                    g.FillEllipse(sb, e.X, e.Y, int.Parse(textBox2.Text), int.Parse(textBox3.Text));
-                    //startPaint = false;
-                    //drawCircle = false;
-                }
-            }
-        }
+    {       
         public Form1()
         {
             InitializeComponent();
             g = pnl_Draw.CreateGraphics();
         }
-        bool startPaint = false;
-        Graphics g;
+        public bool startPaint = false;
+        public Graphics g;
         //nullable int for storing Null value
-        int? initX = null;
-        int? initY = null;
-        bool drawEllipse = false;
-        bool drawRectangle = false;
-        bool drawCircle = false;
+        public int? initX = null;
+        public int? initY = null;
+        public bool drawEllipse = false;
+        public bool drawRectangle = false;
+        public bool drawCircle = false;
         //Event fired when the mouse pointer is moved over the Panel(pnl_Draw).
         private void pnl_Draw_MouseMove(object sender, MouseEventArgs e)
         {
