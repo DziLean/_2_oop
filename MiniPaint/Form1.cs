@@ -66,24 +66,29 @@ namespace _2_oop
                     EB.Draw(ellipse);
                 }
                 if (drawRectangle)
-                {                                      
-                    
+                {
+                    Rectangle rect = new Rectangle(e.X, e.Y, int.Parse(a.Text.ToString().Trim()), int.Parse(b.Text.ToString().Trim()));
+                    RB.Draw(rect);
                 }
                 if (drawCircle)
-                {                   
-                
+                {
+                    Circle circle = new Circle(e.X, e.Y, int.Parse(a.Text.ToString().Trim()));
+                    CB.Draw(circle);
                 }
                 if (drawDot)
                 {
-
+                    Dot dot = new Dot(e.X, e.Y);
+                    DB.Draw(dot);
                 }
                 if (drawLine)
                 {
-
+                    Line line = new Line(e.X, e.Y, int.Parse(tbx2.Text.ToString().Trim()), int.Parse(tby2.Text.ToString().Trim()));
+                    LB.Draw(line);
                 }
                 if (drawTriangle)
                 {
-
+                    Triangle triangle = new Triangle(e.X, e.Y, int.Parse(tbx2.Text.ToString().Trim()), int.Parse(tby2.Text.ToString().Trim()), int.Parse(tbx3.Text.ToString().Trim()), int.Parse(tby3.Text.ToString().Trim()));
+                    TB.Draw(triangle);
                 }
             }
             catch (Exception ex)

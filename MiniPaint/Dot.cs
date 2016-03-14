@@ -6,10 +6,8 @@ using System.Text;
 namespace _2_oop
 {
     public class Dot : Figure
-    {        
-        public int x { get; set; }
-        public int y { get; set; }
-        public Dot(int x, int y):base(x , y)
+    {          
+        public Dot(int x1, int y1):base(x1 , y1)
         {            
             
         }        

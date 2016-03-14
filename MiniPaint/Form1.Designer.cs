@@ -55,25 +55,19 @@
             this.a = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.btn_CanvasColor = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.btn_PenColor = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,8 +75,8 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Tan;
             this.panel1.Controls.Add(this.pnl_Draw);
+            this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel7);
-            this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(0, 21);
             this.panel1.Name = "panel1";
@@ -105,9 +99,9 @@
             // 
             this.panel7.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Controls.Add(this.btn_Rectangle);
             this.panel7.Controls.Add(this.btn_Ellipse);
             this.panel7.Controls.Add(this.btn_Triangle);
-            this.panel7.Controls.Add(this.btn_Rectangle);
             this.panel7.Controls.Add(this.label11);
             this.panel7.Controls.Add(this.btn_Circle);
             this.panel7.Controls.Add(this.label10);
@@ -128,18 +122,18 @@
             this.panel7.Controls.Add(this.b);
             this.panel7.Controls.Add(this.a);
             this.panel7.Controls.Add(this.panel8);
-            this.panel7.Location = new System.Drawing.Point(602, 115);
+            this.panel7.Location = new System.Drawing.Point(603, 66);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(141, 318);
+            this.panel7.Size = new System.Drawing.Size(141, 364);
             this.panel7.TabIndex = 3;
             // 
             // btn_Ellipse
             // 
             this.btn_Ellipse.BackColor = System.Drawing.SystemColors.Control;
             this.btn_Ellipse.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Ellipse.Location = new System.Drawing.Point(0, 221);
+            this.btn_Ellipse.Location = new System.Drawing.Point(-1, 233);
             this.btn_Ellipse.Name = "btn_Ellipse";
-            this.btn_Ellipse.Size = new System.Drawing.Size(141, 22);
+            this.btn_Ellipse.Size = new System.Drawing.Size(141, 34);
             this.btn_Ellipse.TabIndex = 5;
             this.btn_Ellipse.Text = "Ellipse";
             this.btn_Ellipse.UseVisualStyleBackColor = false;
@@ -148,9 +142,9 @@
             // btn_Triangle
             // 
             this.btn_Triangle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_Triangle.Location = new System.Drawing.Point(-1, 148);
+            this.btn_Triangle.Location = new System.Drawing.Point(0, 160);
             this.btn_Triangle.Name = "btn_Triangle";
-            this.btn_Triangle.Size = new System.Drawing.Size(141, 23);
+            this.btn_Triangle.Size = new System.Drawing.Size(141, 28);
             this.btn_Triangle.TabIndex = 18;
             this.btn_Triangle.Text = "Triagle";
             this.btn_Triangle.UseVisualStyleBackColor = true;
@@ -160,9 +154,9 @@
             // 
             this.btn_Rectangle.BackColor = System.Drawing.SystemColors.Control;
             this.btn_Rectangle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Rectangle.Location = new System.Drawing.Point(0, 249);
+            this.btn_Rectangle.Location = new System.Drawing.Point(-2, 273);
             this.btn_Rectangle.Name = "btn_Rectangle";
-            this.btn_Rectangle.Size = new System.Drawing.Size(141, 22);
+            this.btn_Rectangle.Size = new System.Drawing.Size(141, 36);
             this.btn_Rectangle.TabIndex = 6;
             this.btn_Rectangle.Text = "Rectangle";
             this.btn_Rectangle.UseVisualStyleBackColor = false;
@@ -171,7 +165,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(49, 124);
+            this.label11.Location = new System.Drawing.Point(51, 134);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(18, 13);
             this.label11.TabIndex = 31;
@@ -181,9 +175,9 @@
             // 
             this.btn_Circle.BackColor = System.Drawing.SystemColors.Control;
             this.btn_Circle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Circle.Location = new System.Drawing.Point(0, 277);
+            this.btn_Circle.Location = new System.Drawing.Point(-1, 315);
             this.btn_Circle.Name = "btn_Circle";
-            this.btn_Circle.Size = new System.Drawing.Size(141, 25);
+            this.btn_Circle.Size = new System.Drawing.Size(141, 36);
             this.btn_Circle.TabIndex = 7;
             this.btn_Circle.Text = "Circle";
             this.btn_Circle.UseVisualStyleBackColor = false;
@@ -192,7 +186,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(80, 124);
+            this.label10.Location = new System.Drawing.Point(74, 134);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(18, 13);
             this.label10.TabIndex = 30;
@@ -200,16 +194,16 @@
             // 
             // tbx3
             // 
-            this.tbx3.Location = new System.Drawing.Point(0, 122);
+            this.tbx3.Location = new System.Drawing.Point(-1, 134);
             this.tbx3.Name = "tbx3";
-            this.tbx3.Size = new System.Drawing.Size(48, 20);
+            this.tbx3.Size = new System.Drawing.Size(51, 20);
             this.tbx3.TabIndex = 29;
             // 
             // tby3
             // 
-            this.tby3.Location = new System.Drawing.Point(92, 122);
+            this.tby3.Location = new System.Drawing.Point(90, 134);
             this.tby3.Name = "tby3";
-            this.tby3.Size = new System.Drawing.Size(48, 20);
+            this.tby3.Size = new System.Drawing.Size(49, 20);
             this.tby3.TabIndex = 28;
             // 
             // label4
@@ -303,7 +297,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(71, 173);
+            this.label7.Location = new System.Drawing.Point(72, 191);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(13, 13);
             this.label7.TabIndex = 15;
@@ -312,7 +306,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(49, 173);
+            this.label6.Location = new System.Drawing.Point(48, 191);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(13, 13);
             this.label6.TabIndex = 14;
@@ -320,14 +314,14 @@
             // 
             // b
             // 
-            this.b.Location = new System.Drawing.Point(74, 189);
+            this.b.Location = new System.Drawing.Point(75, 207);
             this.b.Name = "b";
             this.b.Size = new System.Drawing.Size(64, 20);
             this.b.TabIndex = 12;
             // 
             // a
             // 
-            this.a.Location = new System.Drawing.Point(0, 189);
+            this.a.Location = new System.Drawing.Point(-2, 207);
             this.a.Name = "a";
             this.a.Size = new System.Drawing.Size(63, 20);
             this.a.TabIndex = 11;
@@ -352,23 +346,12 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Draw Figure";
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.PaleGoldenrod;
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.btn_CanvasColor);
-            this.panel4.Controls.Add(this.panel5);
-            this.panel4.Location = new System.Drawing.Point(602, 60);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(141, 53);
-            this.panel4.TabIndex = 2;
-            // 
             // btn_CanvasColor
             // 
             this.btn_CanvasColor.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_CanvasColor.Location = new System.Drawing.Point(-1, 34);
+            this.btn_CanvasColor.Location = new System.Drawing.Point(-3, 27);
             this.btn_CanvasColor.Name = "btn_CanvasColor";
-            this.btn_CanvasColor.Size = new System.Drawing.Size(141, 14);
+            this.btn_CanvasColor.Size = new System.Drawing.Size(143, 32);
             this.btn_CanvasColor.TabIndex = 4;
             this.btn_CanvasColor.UseVisualStyleBackColor = false;
             this.btn_CanvasColor.Click += new System.EventHandler(this.btn_CanvasColor_Click_1);
@@ -377,7 +360,7 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.MediumPurple;
             this.panel5.Controls.Add(this.label1);
-            this.panel5.Location = new System.Drawing.Point(-1, -1);
+            this.panel5.Location = new System.Drawing.Point(602, 4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(141, 27);
             this.panel5.TabIndex = 0;
@@ -397,33 +380,12 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.panel6);
+            this.panel2.Controls.Add(this.btn_CanvasColor);
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.btn_PenColor);
             this.panel2.Location = new System.Drawing.Point(603, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(141, 60);
             this.panel2.TabIndex = 1;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.MediumPurple;
-            this.panel6.Controls.Add(this.label2);
-            this.panel6.Location = new System.Drawing.Point(0, -1);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(140, 27);
-            this.panel6.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(48, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Paint";
             // 
             // panel3
             // 
@@ -471,16 +433,6 @@
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // btn_PenColor
-            // 
-            this.btn_PenColor.BackColor = System.Drawing.Color.Black;
-            this.btn_PenColor.Location = new System.Drawing.Point(10, 32);
-            this.btn_PenColor.Name = "btn_PenColor";
-            this.btn_PenColor.Size = new System.Drawing.Size(126, 21);
-            this.btn_PenColor.TabIndex = 2;
-            this.btn_PenColor.UseVisualStyleBackColor = false;
-            this.btn_PenColor.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -496,12 +448,9 @@
             this.panel7.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
-            this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -512,8 +461,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pnl_Draw;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btn_PenColor;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
@@ -521,8 +468,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btn_CanvasColor;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button btn_Circle;
         private System.Windows.Forms.Button btn_Rectangle;
