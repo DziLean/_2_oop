@@ -8,17 +8,17 @@ namespace _2_oop
 {
     public class Triangle : Figure
     {
-        private int rightX;
-        private int rightY;
-        private int upX;
-        private int upY;
-        public Triangle(int xl, int yl, int xr, int yr, int xu, int yu)
-            : base(xl, yl)
+        public int x2 { get; set; }
+        public int y2 { get; set; }
+        public int x3 { get; set; }
+        public int y3 { get; set; }
+        public Triangle(int x1, int y1, int x2, int y2, int x3, int y3)
+            : base(x1, y1)
         {
-            rightX = xr;
-            rightY = yr;
-            upX = xu;
-            upY = yu;
+            this.x2 = x2;
+            this.y2 = y2;
+            this.x3 = x3;
+            this.y3 = y3;
         }
     }
 }

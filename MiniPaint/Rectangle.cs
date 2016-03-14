@@ -7,12 +7,12 @@ namespace _2_oop
 {
     public class Rectangle : Figure
     {        
-        private int rightX;
-        private int rightY;
-        public Rectangle(int xl, int yl,int xr, int yr):base(xl,yl)
+        public int a { get; set; }
+        public int b { get; set; }
+        public Rectangle(int x1, int y1,int x2, int y2):base(x1,y1)
         {                   
-            rightX = xr;
-            rightY = yr;
+            this.a = x2;
+            this.b = y2;
         }       
     }
 }

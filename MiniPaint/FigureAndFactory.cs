@@ -9,13 +9,13 @@ namespace _2_oop
 {
     public abstract class Figure
     {
-        private int x;
-        private int y;
-        public int X
+        private int _x;
+        private int _y;
+        public int x
         {
             get
             {
-                return this.x;
+                return this._x;
             }
             private set
             {                
@@ -24,11 +24,11 @@ namespace _2_oop
                 this.x = value;
             }
         }
-        public int Y
+        public int y
         {
             get
             {
-                return this.y;
+                return this._y;
             }
             private set
             {
@@ -39,12 +39,12 @@ namespace _2_oop
         }
         protected Figure(int x, int y)
         {
-            X = x;
-            Y = y;
+            x = _x;
+            y = _y;
         }             
     }
     public interface Painter
     {
-        void Draw(Figure figure, MouseEventArgs e, int length, int height);
+        void Draw();
     }
 }

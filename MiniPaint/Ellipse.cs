@@ -7,8 +7,8 @@ namespace _2_oop
 {
     public class Ellipse : Figure
     {
-        private int a;
-        private int b;
+        public int a { get; set; }
+        public int b { get; set; }
         public Ellipse(int a, int b, int x, int y)
             : base(x, y)
         {

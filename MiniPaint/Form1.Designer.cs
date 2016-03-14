@@ -52,6 +52,9 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_PenColor = new System.Windows.Forms.Button();
+            this.btn_Dot = new System.Windows.Forms.Button();
+            this.btn_Line = new System.Windows.Forms.Button();
+            this.btn_Triangle = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -90,6 +93,9 @@
             // 
             this.panel7.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Controls.Add(this.btn_Triangle);
+            this.panel7.Controls.Add(this.btn_Line);
+            this.panel7.Controls.Add(this.btn_Dot);
             this.panel7.Controls.Add(this.label7);
             this.panel7.Controls.Add(this.label6);
             this.panel7.Controls.Add(this.textBox3);
@@ -106,7 +112,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(66, 141);
+            this.label7.Location = new System.Drawing.Point(70, 217);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(13, 13);
             this.label7.TabIndex = 15;
@@ -115,7 +121,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(47, 141);
+            this.label6.Location = new System.Drawing.Point(48, 217);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(13, 13);
             this.label6.TabIndex = 14;
@@ -123,14 +129,14 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(69, 157);
+            this.textBox3.Location = new System.Drawing.Point(73, 233);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(64, 20);
             this.textBox3.TabIndex = 12;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(0, 157);
+            this.textBox2.Location = new System.Drawing.Point(0, 233);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(63, 20);
             this.textBox2.TabIndex = 11;
@@ -139,9 +145,9 @@
             // 
             this.btn_Circle.BackColor = System.Drawing.SystemColors.Control;
             this.btn_Circle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Circle.Location = new System.Drawing.Point(-1, 100);
+            this.btn_Circle.Location = new System.Drawing.Point(-1, 88);
             this.btn_Circle.Name = "btn_Circle";
-            this.btn_Circle.Size = new System.Drawing.Size(141, 28);
+            this.btn_Circle.Size = new System.Drawing.Size(141, 25);
             this.btn_Circle.TabIndex = 7;
             this.btn_Circle.Text = "Circle";
             this.btn_Circle.UseVisualStyleBackColor = false;
@@ -151,9 +157,9 @@
             // 
             this.btn_Rectangle.BackColor = System.Drawing.SystemColors.Control;
             this.btn_Rectangle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Rectangle.Location = new System.Drawing.Point(-1, 66);
+            this.btn_Rectangle.Location = new System.Drawing.Point(-1, 60);
             this.btn_Rectangle.Name = "btn_Rectangle";
-            this.btn_Rectangle.Size = new System.Drawing.Size(141, 28);
+            this.btn_Rectangle.Size = new System.Drawing.Size(141, 22);
             this.btn_Rectangle.TabIndex = 6;
             this.btn_Rectangle.Text = "Rectangle";
             this.btn_Rectangle.UseVisualStyleBackColor = false;
@@ -165,7 +171,7 @@
             this.btn_Ellipse.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Ellipse.Location = new System.Drawing.Point(-1, 32);
             this.btn_Ellipse.Name = "btn_Ellipse";
-            this.btn_Ellipse.Size = new System.Drawing.Size(141, 28);
+            this.btn_Ellipse.Size = new System.Drawing.Size(141, 22);
             this.btn_Ellipse.TabIndex = 5;
             this.btn_Ellipse.Text = "Ellipse";
             this.btn_Ellipse.UseVisualStyleBackColor = false;
@@ -320,6 +326,39 @@
             this.btn_PenColor.UseVisualStyleBackColor = false;
             this.btn_PenColor.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btn_Dot
+            // 
+            this.btn_Dot.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_Dot.Location = new System.Drawing.Point(-2, 119);
+            this.btn_Dot.Name = "btn_Dot";
+            this.btn_Dot.Size = new System.Drawing.Size(142, 22);
+            this.btn_Dot.TabIndex = 16;
+            this.btn_Dot.Text = "Dot";
+            this.btn_Dot.UseVisualStyleBackColor = true;
+            this.btn_Dot.Click += new System.EventHandler(this.btn_Dot_Click);
+            // 
+            // btn_Line
+            // 
+            this.btn_Line.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_Line.Location = new System.Drawing.Point(-1, 147);
+            this.btn_Line.Name = "btn_Line";
+            this.btn_Line.Size = new System.Drawing.Size(141, 23);
+            this.btn_Line.TabIndex = 17;
+            this.btn_Line.Text = "Line";
+            this.btn_Line.UseVisualStyleBackColor = true;
+            this.btn_Line.Click += new System.EventHandler(this.btn_Line_Click);
+            // 
+            // btn_Triangle
+            // 
+            this.btn_Triangle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_Triangle.Location = new System.Drawing.Point(-1, 176);
+            this.btn_Triangle.Name = "btn_Triangle";
+            this.btn_Triangle.Size = new System.Drawing.Size(141, 23);
+            this.btn_Triangle.TabIndex = 18;
+            this.btn_Triangle.Text = "Triagle";
+            this.btn_Triangle.UseVisualStyleBackColor = true;
+            this.btn_Triangle.Click += new System.EventHandler(this.btn_Triangle_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -372,6 +411,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btn_Ellipse;
+        private System.Windows.Forms.Button btn_Triangle;
+        private System.Windows.Forms.Button btn_Line;
+        private System.Windows.Forms.Button btn_Dot;
     }
 }
 

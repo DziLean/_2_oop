@@ -16,12 +16,12 @@ namespace _2_oop
             initY = 0;
             figure = null;
             sb = new SolidBrush(btn_PenColor.BackColor);
-            RectangleBuider RB = new RectangleBuider();
-            TriangleBuilder TB = new TriangleBuilder();
-            DotBuider DB = new DotBuider();
-            LineBuilder LB = new LineBuilder();
-            EllipseBuilder EB = new EllipseBuilder();
-            CircleBuilder CB = new CircleBuilder();
+            RB = new RectangleBuider();
+            TB = new TriangleBuilder();
+            DB = new DotBuider();
+            LB = new LineBuilder();
+            EB = new EllipseBuilder();
+            CB = new CircleBuilder();
             drawEllipse = false;
             drawRectangle  = false;
             drawCircle  = false;
@@ -41,6 +41,12 @@ namespace _2_oop
         public bool drawDot { get; set; }
         public bool drawTriangle { get; set; }
         public static SolidBrush sb { get; set; }
+        RectangleBuider RB;
+        TriangleBuilder TB;
+        DotBuider DB;
+        LineBuilder LB;
+        EllipseBuilder EB;
+        CircleBuilder CB;
         private void pnl_Draw_MouseMove(object sender, MouseEventArgs e)
         {
             if(startPaint)
@@ -53,18 +59,31 @@ namespace _2_oop
         {
             try
             {
-                startPaint = true;
+                
                 if (drawEllipse)
-                {             
-                                     
+                {
+                    Ellipse ellipse = new Ellipse(e.X, e.Y, int.Parse(textBox2.Text.ToString().Trim()), int.Parse(textBox3.Text.ToString().Trim()));
+                    EB.Draw(ellipse);
                 }
                 if (drawRectangle)
                 {                                      
                     
                 }
                 if (drawCircle)
-                {                    
-                                        
+                {                   
+                
+                }
+                if (drawDot)
+                {
+
+                }
+                if (drawLine)
+                {
+
+                }
+                if (drawTriangle)
+                {
+
                 }
             }
             catch (Exception ex)
@@ -103,26 +122,65 @@ namespace _2_oop
         }
         private void btn_Ellipse_Click(object sender, EventArgs e)
         {
-            drawEllipse = false;
-            drawRectangle = true;
+            drawEllipse = true;
+            drawRectangle = false;
             drawCircle = false;
+            drawLine = false;
+            drawDot = false;
+            drawTriangle = false;
         }
         private void btn_Rectangle_Click(object sender, EventArgs e)
         {
             drawEllipse = false;
             drawRectangle = true;
             drawCircle = false;
+            drawLine = false;
+            drawDot = false;
+            drawTriangle = false;
         }
         private void btn_Circle_Click(object sender, EventArgs e)
         {
             drawEllipse = false;
             drawRectangle = false;
             drawCircle = true;
+            drawLine = false;
+            drawDot = false;
+            drawTriangle = false;
         }       
         
         private void pnl_Draw_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btn_Dot_Click(object sender, EventArgs e)
+        {
+            drawEllipse = false;
+            drawRectangle = false;
+            drawCircle = true;
+            drawLine = false;
+            drawDot = true;
+            drawTriangle = false;
+        }
+
+        private void btn_Line_Click(object sender, EventArgs e)
+        {
+            drawEllipse = false;
+            drawRectangle = false;
+            drawCircle = true;
+            drawLine = true;
+            drawDot = false;
+            drawTriangle = false;
+        }
+
+        private void btn_Triangle_Click(object sender, EventArgs e)
+        {
+            drawEllipse = false;
+            drawRectangle = false;
+            drawCircle = false;
+            drawLine = false;
+            drawDot = false;
+            drawTriangle = true;
         }
     }    
 }
