@@ -18,8 +18,8 @@ C:\Users\dzi\Downloads\PaintSourceCode-noexe\MiniPaint\MiniPaint\obj\Debug\_2_oo
 C:\Users\dzi\Documents\Visual Studio 2012\Projects\_2_oop_git\_2_oop\MiniPaint\obj\Debug\MiniPaint.exe
 C:\Users\dzi\Documents\Visual Studio 2012\Projects\_2_oop_git\_2_oop\MiniPaint\obj\Debug\MiniPaint.pdb
 C:\Users\dzi\Documents\Visual Studio 2012\Projects\_2_oop_git\_2_oop\MiniPaint\obj\Debug\MiniPaint.csprojResolveAssemblyReference.cache
-C:\Users\dzi\Documents\Visual Studio 2012\Projects\_2_oop_git\_2_oop\MiniPaint\obj\Debug\_2_oop.Form1.resources
 C:\Users\dzi\Documents\Visual Studio 2012\Projects\_2_oop_git\_2_oop\MiniPaint\obj\Debug\_2_oop.Properties.Resources.resources
 C:\Users\dzi\Documents\Visual Studio 2012\Projects\_2_oop_git\_2_oop\MiniPaint\obj\Debug\MiniPaint.csproj.GenerateResource.Cache
 C:\Users\dzi\Documents\Visual Studio 2012\Projects\_2_oop_git\_2_oop\MiniPaint\bin\Debug\MiniPaint.exe
 C:\Users\dzi\Documents\Visual Studio 2012\Projects\_2_oop_git\_2_oop\MiniPaint\bin\Debug\MiniPaint.pdb
+C:\Users\dzi\Documents\Visual Studio 2012\Projects\_2_oop_git\_2_oop\MiniPaint\obj\Debug\_2_oop.Form1.resources

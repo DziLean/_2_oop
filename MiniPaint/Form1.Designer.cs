@@ -37,7 +37,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.btn_Circle = new System.Windows.Forms.Button();
             this.btn_Rectangle = new System.Windows.Forms.Button();
-            this.btn_Square = new System.Windows.Forms.Button();
+            this.btn_Ellipse = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -81,7 +81,7 @@
             this.pnl_Draw.Name = "pnl_Draw";
             this.pnl_Draw.Size = new System.Drawing.Size(602, 430);
             this.pnl_Draw.TabIndex = 2;
-      
+            this.pnl_Draw.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Draw_Paint);
             this.pnl_Draw.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnl_Draw_MouseDown);
             this.pnl_Draw.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnl_Draw_MouseMove);
             this.pnl_Draw.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnl_Draw_MouseUp);
@@ -96,13 +96,12 @@
             this.panel7.Controls.Add(this.textBox2);
             this.panel7.Controls.Add(this.btn_Circle);
             this.panel7.Controls.Add(this.btn_Rectangle);
-            this.panel7.Controls.Add(this.btn_Square);
+            this.panel7.Controls.Add(this.btn_Ellipse);
             this.panel7.Controls.Add(this.panel8);
             this.panel7.Location = new System.Drawing.Point(603, 172);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(141, 258);
             this.panel7.TabIndex = 3;
-           
             // 
             // label7
             // 
@@ -128,7 +127,6 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(64, 20);
             this.textBox3.TabIndex = 12;
-          
             // 
             // textBox2
             // 
@@ -136,7 +134,6 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(63, 20);
             this.textBox2.TabIndex = 11;
-           
             // 
             // btn_Circle
             // 
@@ -162,17 +159,17 @@
             this.btn_Rectangle.UseVisualStyleBackColor = false;
             this.btn_Rectangle.Click += new System.EventHandler(this.btn_Rectangle_Click);
             // 
-            // btn_Square
+            // btn_Ellipse
             // 
-            this.btn_Square.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_Square.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Square.Location = new System.Drawing.Point(-1, 32);
-            this.btn_Square.Name = "btn_Square";
-            this.btn_Square.Size = new System.Drawing.Size(141, 28);
-            this.btn_Square.TabIndex = 5;
-            this.btn_Square.Text = "Ellipse";
-            this.btn_Square.UseVisualStyleBackColor = false;
-            this.btn_Square.Click += new System.EventHandler(this.btn_Square_Click);
+            this.btn_Ellipse.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_Ellipse.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Ellipse.Location = new System.Drawing.Point(-1, 32);
+            this.btn_Ellipse.Name = "btn_Ellipse";
+            this.btn_Ellipse.Size = new System.Drawing.Size(141, 28);
+            this.btn_Ellipse.TabIndex = 5;
+            this.btn_Ellipse.Text = "Ellipse";
+            this.btn_Ellipse.UseVisualStyleBackColor = false;
+            this.btn_Ellipse.Click += new System.EventHandler(this.btn_Ellipse_Click);
             // 
             // panel8
             // 
@@ -193,7 +190,6 @@
             this.label3.Size = new System.Drawing.Size(91, 16);
             this.label3.TabIndex = 1;
             this.label3.Text = "Draw Figure";
-        
             // 
             // panel4
             // 
@@ -375,7 +371,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btn_Square;
+        private System.Windows.Forms.Button btn_Ellipse;
     }
 }
 
