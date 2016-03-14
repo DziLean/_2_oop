@@ -15,7 +15,7 @@ namespace _2_oop
             initX = 0;
             initY = 0;
             figure = null;
-            sb = new SolidBrush(btn_PenColor.BackColor);
+            sb = new SolidBrush(Color.Black);
             RB = new RectangleBuider();
             TB = new TriangleBuilder();
             DB = new DotBuider();
@@ -49,11 +49,7 @@ namespace _2_oop
         CircleBuilder CB;
         private void pnl_Draw_MouseMove(object sender, MouseEventArgs e)
         {
-            if(startPaint)
-            {
-                Pen p = new Pen(btn_PenColor.BackColor,2);                     
-                g.DrawLine(p, new Point(e.X,e.Y), new Point(e.X, e.Y));                
-            }
+            coords.Text = e.X + " " + e.Y;
         }        
         private void pnl_Draw_MouseDown(object sender, MouseEventArgs e)
         {
@@ -102,14 +98,7 @@ namespace _2_oop
             initX = 0;
             initY = 0;
         }        
-        private void button1_Click(object sender, EventArgs e)
-        {
-            ColorDialog c = new ColorDialog();
-            if(c.ShowDialog()==DialogResult.OK)
-            {
-                btn_PenColor.BackColor = c.Color;
-            }
-        } 
+        
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         { 
             g.Clear(pnl_Draw.BackColor);
@@ -162,7 +151,7 @@ namespace _2_oop
         {
             drawEllipse = false;
             drawRectangle = false;
-            drawCircle = true;
+            drawCircle = false;
             drawLine = false;
             drawDot = true;
             drawTriangle = false;
@@ -172,7 +161,7 @@ namespace _2_oop
         {
             drawEllipse = false;
             drawRectangle = false;
-            drawCircle = true;
+            drawCircle = false;
             drawLine = true;
             drawDot = false;
             drawTriangle = false;
@@ -186,6 +175,11 @@ namespace _2_oop
             drawLine = false;
             drawDot = false;
             drawTriangle = true;
+        }
+
+        private void panel7_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         

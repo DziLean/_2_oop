@@ -56,7 +56,7 @@ namespace _2_oop
     {
         public void Draw(Line line)
         {
-            Form1.g.FillRectangle(Form1.sb, line.x, line.y, line.x2, line.y2 );
+            Form1.g.DrawLine(new Pen(Form1.sb,2), new Point(line.x, line.y), new Point (line.x2, line.y2) );
         }
 
         void Painter.Draw()
